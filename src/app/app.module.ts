@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { CounterModule } from './counter/counter.module';
 import { HerosModule } from './heroes/heroes.module';
+import { DbzModule } from './dbz/dbz.module';
 
 //CommomModule ya es parte de este archivo principal
 @NgModule({
@@ -16,7 +17,8 @@ import { HerosModule } from './heroes/heroes.module';
     BrowserModule,
     AppRoutingModule,
     CounterModule,
-    HerosModule
+    HerosModule,
+    DbzModule
   ],
   providers: [],
   bootstrap: [AppComponent]
