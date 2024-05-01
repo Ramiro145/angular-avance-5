@@ -12,6 +12,7 @@ export class MainPageComponent{
   //inyectando el servicio
   constructor( private dbzService: DbzService ){}
 
+  //el getter se usa como propiedad y no como funcion
   get characters():Character[]{
     return [...this.dbzService.characters];
   }
