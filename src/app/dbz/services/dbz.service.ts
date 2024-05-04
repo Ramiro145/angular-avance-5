@@ -7,7 +7,11 @@ import {v4 as uuid} from 'uuid';
 )
 export class DbzService {
 
-
+  constructor(){
+    //cuando se iniciliaza el componente se llama a esta funcion
+    //donde se carga la nueva lista en el local storage
+    this.loadLocalStorage();
+  }
 
   public characters:Character[] = [
     {

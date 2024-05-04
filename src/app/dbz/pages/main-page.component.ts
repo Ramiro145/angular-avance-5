@@ -11,9 +11,6 @@ export class MainPageComponent{
 
   //inyectando el servicio
   constructor( private dbzService: DbzService ){
-    //cuando se iniciliaza el componente se llama a esta funcion
-    //donde se carga la nueva lista en el local storage
-    this.dbzService.loadLocalStorage();
   }
 
   //el getter se usa como propiedad y no como funcion
