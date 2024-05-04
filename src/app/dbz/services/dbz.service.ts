@@ -6,6 +6,9 @@ import {v4 as uuid} from 'uuid';
   {providedIn: 'root'}
 )
 export class DbzService {
+
+
+
   public characters:Character[] = [
     {
       id: uuid(),
@@ -33,10 +36,26 @@ export class DbzService {
     }
 
     this.characters.push(newCharacter);
+    this.saveLocalStorage()
+  }
+
+  public saveLocalStorage():void{
+    localStorage.setItem('character',JSON.stringify(this.characters));
+    console.log(this.characters)
+  }
+
+  public loadLocalStorage():void{
+    if(!localStorage.getItem('character'))return;
+
+    //not null assertion operator para indicar que siempre vendra el local
+    //storage
+    this.characters = JSON.parse(localStorage.getItem('character')!);
+
   }
 
   deleteCharacterById(id:string){
     this.characters = this.characters.filter(character => character.id !== id);
+    this.saveLocalStorage();
   }
 
 }
